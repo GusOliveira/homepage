@@ -10,6 +10,12 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+body {
+    background-image: url('/static/portifolio/background.jpeg' no-repeat right bottom;
+    color: white;
+}
+
+
 #blogtitle {
     font-size: 6rem;
 }
@@ -22,3 +28,6 @@ body {
         font-size: 5rem;
     }
 }
+
+.dev-icons {
+  font-size: 3rem;

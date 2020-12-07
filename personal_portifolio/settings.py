@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'j7^%4ap6ut8q&bm_f3fo#_$g!@709n%6a9h6s&7s@4#yos-qnd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://gfoliveira.pythonanywhere.com/']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'portifolio',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -82,6 +83,11 @@ DATABASES = {
     }
 }
 
+GRAPH_MODELS = {
+    'all_applications': True,
+    'group_models': True,
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -120,6 +126,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+try:
+    from .local_settings import *
+except ImportError:
+    print("DUH! you're ONLINE dumbass!")
+
+
