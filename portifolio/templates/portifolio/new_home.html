@@ -1,0 +1,43 @@
+{% extends 'portifolio/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'portifolio/modern_home.css' %}">
+
+<header class="hero-section">
+    <div class="container">
+        <h1>Welcome to My Blog</h1>
+        <p class="lead">Exploring endurance sports, technology, philosophy, and daily life.</p>
+    </div>
+</header>
+
+<section class="blog-categories">
+    <div class="container">
+        <h2>Categories</h2>
+        <div class="category-links">
+            <a href="#" class="category-link">Endurance Sports</a>
+            <a href="#" class="category-link">Tech</a>
+            <a href="#" class="category-link">Philosophy</a>
+            <a href="#" class="category-link">Daily Blog</a>
+        </div>
+    </div>
+</section>
+
+<section class="latest-posts">
+    <div class="container">
+        <h2>Latest Posts</h2>
+        <div class="post-grid">
+            {% for post in latest_posts %}
+            <div class="post-preview">
+                <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+                <p class="post-meta">Published on {{ post.date_posted|date:"F d, Y" }}</p>
+                <p>{{ post.summary|truncatewords:30 }}</p>
+            </div>
+            {% empty %}
+            <p>No posts yet. Stay tuned!</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

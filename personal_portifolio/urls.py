@@ -17,13 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from portifolio import views
+from portifolio import views # Keep this for other views if any, or adjust if new_home is the only one from portifolio.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
+    # path('', views.home, name='home'), # Old homepage
+    path('', views.new_home, name='new_home'), # New homepage
     path('blog/', include('blog.urls')),
-
+    # You might want to keep the old home page accessible at a different URL for a while:
+    # path('old-home/', views.home, name='old_home'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
