@@ -1,0 +1,110 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.hero-section {
+    background: #333;
+    color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-section .lead {
+    font-size: 1.5rem;
+    color: #aaa;
+}
+
+.blog-categories {
+    padding: 2rem 0;
+    background: #fff;
+    text-align: center;
+}
+
+.blog-categories h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.category-links .category-link {
+    display: inline-block;
+    background: #e7e7e7;
+    color: #333;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.category-links .category-link:hover {
+    background-color: #ddd;
+}
+
+.latest-posts {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.latest-posts h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    text-align: left;
+}
+
+.post-preview {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.post-preview h3 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.post-preview h3 a:hover {
+    text-decoration: underline;
+}
+
+.post-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+/* Minimalist adjustments from base.html might be needed if it has conflicting styles */
+/* For example, if base.html has a very different navbar or footer,
+   you might need to override or adjust those styles here or in base.html itself. */
+
+/* Footer styling (example, assuming a simple text footer) */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: #333;
+    color: #fff;
+    margin-top: 2rem;
+}
